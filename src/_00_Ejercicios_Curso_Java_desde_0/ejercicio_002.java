@@ -22,12 +22,17 @@ public class ejercicio_002 {
         int num = sc.nextInt();
 
         int cifras = 1;
-        while (num > 9) {
-            num = num / 10;
-            cifras++;
-        }
 
-        System.out.println("El numero introducido tiene: " + cifras + (cifras > 1 ? " cifras" : " cifra"));
+        if (num < 0) {
+            System.out.println("NO se pueden introducir numeros negativos. El programa ha finalizado");
+        } else {
+            while (num > 9) {
+                num = num / 10;
+                cifras++;
+            }
+            System.out.println("El numero introducido tiene: " + cifras + (cifras > 1 ? " cifras" : " cifra"));
+            sc.close();
+        }
     }
 
 }

@@ -11,8 +11,7 @@ public class _0300_Class_Arrays_Teoria {
 
     // https://www.w3schools.com/java/java_arrays.asp
     // CONCEPTOS BASICOS CLASE Arrays
-    // arrays   paso por Referencia
-    // Array se genera inicialmente con elementos null
+    // arrays   paso por Referencia (es decir, NO es una copia, cambias el propio array)
     public static void main(String[] args) {
         // DECLARAR ARRAY
         String[] cars_v0;
@@ -42,6 +41,11 @@ public class _0300_Class_Arrays_Teoria {
             System.out.println(c);
         }
 
+        // COPIAR ARRAYS
+        // clone() realiza una copia exacta del array en otro espacio de memoria
+        int[] nums = {1, 2, 3, 4, 5};
+        int[] copiaNums = nums.clone();
+
         // ARRAY MULTIDIMENSIONALES
         int[][] myNumbers = {{1, 2, 3, 4}, {5, 6, 7}};
         System.out.println(myNumbers[1][2]); // Output 7
@@ -70,6 +74,8 @@ public class _0300_Class_Arrays_Teoria {
         Arrays.sort(numeros);
         // toString         Genera una cadena String para impresión.
         Arrays.toString(cars_v1);
+        // clone()          Copia en una direccion de memoria diferente el array indicado
+        // arraycopy(array1, iniioOrigen, array2, inicioDestino, elementos)
     }
 
 }

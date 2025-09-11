@@ -1,5 +1,6 @@
 package _03_Class_Arrays;
 
+import static _03_Class_Math._0302_numeros_aleatorios.generaNumAleatorio;
 import java.util.Arrays;
 
 /**
@@ -9,15 +10,24 @@ import java.util.Arrays;
  */
 public class _0301_Class_Arrays_Funciones {
 
+    public static void main(String[] args) {
+        // main para realizar pruebas de las funciones
+        int[] array = generaArrayNumerosAleatorios(10);
+
+        int[] a = {5, 6, 1, 3, 2, 7, 8};
+        ordenacionBurbuja_2(a);
+        mostrarArray(a);
+    }
+
     // FUNCIONES ARRAYS
     // 01-Mostrar los valores que contiene un array
     // 02-Calcula el valor de la suma de los elementos del array
     // 03-Calcula la media de los valores de los elementos del array
     // 04-Invertir un array
     // 05-Determina si es capicua
-    // 06-Ordena array mediante el metodo "Burbuja"
-    // 07-Ordena array de numeros forma ascendente mediante el metodo "Quicksrot"
-    // 08-Ordena array de String de forma ascendente mediante el metodo "Quicksrot"
+    // 06-Ordena array de enteros mediante el metodo "Burbuja"
+    // 07-Ordena array de enteros mediante el metodo "Quicksrot"
+    // 08-Ordena array de String  mediante el metodo "Quicksrot"
     // 09-Busqueda Binaria devuelve en que posición está un valor
     // 10-Devuelve un array de numeros entre dos intervalos dados por parametros
     // 11-Devuelve un array con los valores mayor y menor de un array.
@@ -28,15 +38,18 @@ public class _0301_Class_Arrays_Funciones {
     // 16-Indica el numero de veces que se repite un numero
     // 17-Indica el numero de veces que se repite un numero en 2 arrays en posiciones diferentes
     // 18-Indica el numero de veces que se repite un numero en 2 arrays en la misma posicion
-    //
-    //
+    // 19-Devuelve un array de numeros enteros aleatorios
+    // 20-Devuelve un array con los valores maximo de cada una de las posiciones de dos arrays pasados por parametros
+    // 
     /**
      * 01-Mostrar los valores que contiene un array
      */
     public static void mostrarArray(int[] array) {
+        System.out.print("{");
         for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+            System.out.print(array[i] + ",");
         }
+        System.out.print("\b}");
     }
 
     /**
@@ -104,6 +117,21 @@ public class _0301_Class_Arrays_Funciones {
             }
             // si llega aqui es que cuentaIntercambios ha sumado ++ se iguala a 0 y vuelve a recorrer el array
             cuentaIntercambios = 0;
+        }
+    }
+
+    public static void ordenacionBurbuja_2(int[] array) {
+        int aux;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length - i - 1; j++) {
+                //desplazamos el valor maximo a la derecha
+                // cambiando el signo > por < la ordenacion pasa de Ascendente a Descendente
+                if (array[j] > array[j + 1]) {
+                    aux = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = aux;
+                }
+            }
         }
     }
 
@@ -375,6 +403,43 @@ public class _0301_Class_Arrays_Funciones {
             }
         }
         return repetido;
+    }
+
+    /**
+     * 19-Devuelve un array de numeros enteros aleatorios
+     */
+    public static int[] generaArrayNumerosAleatorios(int elementos) {
+        int[] devuelve = new int[elementos];
+        for (int i = 0; i < elementos; i++) {
+            devuelve[i] = generaNumAleatorio();
+        }
+        return devuelve;
+    }
+
+    /**
+     * 20-Devuelve un array con los valores maximo de cada una de las posiciones
+     * de dos arrays pasados por parametros
+     */
+    public static int[] arrayValoresMax(int[] a1, int[] a2) {
+        int[] arrayMayorLong, arrayMenorLong;
+        if (a1.length > a2.length) {
+            arrayMayorLong = Arrays.copyOf(a1, a1.length);
+            arrayMenorLong = Arrays.copyOf(a2, a2.length);
+        } else {
+            arrayMayorLong = Arrays.copyOf(a2, a2.length);
+            arrayMenorLong = Arrays.copyOf(a1, a1.length);
+        }
+
+        int[] devuelve = new int[arrayMayorLong.length];
+
+        for (int i = 0; i < arrayMayorLong.length; i++) {
+            if (i < arrayMenorLong.length && arrayMenorLong[i] > arrayMayorLong[i]) {
+                devuelve[i] = arrayMenorLong[i];
+            } else {
+                devuelve[i] = arrayMayorLong[i];
+            }
+        }
+        return devuelve;
     }
 
 }

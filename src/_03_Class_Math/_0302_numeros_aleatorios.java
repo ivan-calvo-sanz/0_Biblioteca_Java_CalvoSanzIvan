@@ -8,17 +8,26 @@ package _03_Class_Math;
 public class _0302_numeros_aleatorios {
 
     public static void main(String[] args) {
-
+        // main para realizar pruebas de los metodos
+        System.out.println(generaNumAleatorio());
     }
 
     // FUNCIONES Numeros aleatorios
-    // 01-Genera un numero entero aleatorio entre dos valores
-    // 02-Genera un numero Real aleatorio entre dos valores
-    // 03-Genera un array con numeros aleatorios no repetidos
-    // 04-Genera una Matriz con numeros aleatorios no repetidos
+    // 01-Genera numero aleatorio
+    // 02-Genera un numero entero aleatorio entre dos valores
+    // 03-Genera un numero Real aleatorio entre dos valores
+    // 04-Genera un array con numeros aleatorios no repetidos
+    // 05-Genera una Matriz con numeros aleatorios no repetidos
     // 
     /**
-     * 01-Genera un numero aleatorio entre dos valores
+     * 01-Genera numero aleatorio
+     */
+    public static int generaNumAleatorio() {
+        return (int) (Math.random() * 10);
+    }
+
+    /**
+     * 02-Genera un numero aleatorio entre dos valores
      */
     public static int generaNumeroAleatorio(int minimo, int maximo) {
         int num = (int) Math.floor(Math.random() * (maximo - minimo + 1) + (minimo));
@@ -26,7 +35,7 @@ public class _0302_numeros_aleatorios {
     }
 
     /**
-     * 02-Genera un numero Real aleatorio entre dos valores
+     * 03-Genera un numero Real aleatorio entre dos valores
      */
     public static double generaNumeroRealAleatorio(int minimo, int maximo) {
         double num = Math.floor(Math.random() * (maximo - minimo + 1) + (minimo));
@@ -34,7 +43,7 @@ public class _0302_numeros_aleatorios {
     }
 
     /**
-     * 03-Genera un array con numeros aleatorios no repetidos (El valor 0 no se
+     * 04-Genera un array con numeros aleatorios no repetidos (El valor 0 no se
      * contempla que sea un posible valor en el array de numeros aleatorios)
      *
      * @param valorAleatorioMinimo intervalo-valor minimo del numero aleatorio
@@ -79,7 +88,7 @@ public class _0302_numeros_aleatorios {
     }
 
     /**
-     * 04-Genera una Matriz con numeros aleatorios no repetidos (El valor 0 no
+     * 05-Genera una Matriz con numeros aleatorios no repetidos (El valor 0 no
      * se contempla que sea un posible valor en el array de numeros aleatorios)
      *
      * @param numFilasMatriz numero de filas que tendra la Matriz generada

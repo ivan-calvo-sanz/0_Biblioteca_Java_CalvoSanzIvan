@@ -1,5 +1,8 @@
 package _03_Class_Arrays;
 
+import static _03_Class_Arrays._0301_Class_Arrays_Funciones.arrayValoresMax;
+import static _03_Class_Arrays._0301_Class_Arrays_Funciones.generaArrayNumerosAleatorios;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -10,6 +13,21 @@ import java.util.Scanner;
 public class _0302_Class_Arrays_Matrices_Funciones {
 
     static Scanner entrada = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        // main para realizar pruebas de las funciones
+        int[][] matriz = {{0, 1, 2, 3, 4}, {11}, {11, 22, 33, 44, 55, 80}};
+
+        int[][] matrizA = {{1, 10, 1}, {2, 2, 20}, {30, 3, 3}};
+        int[][] matrizB = {{4, 4, 4}, {5, 5, 5}, {6, 6, 6}};
+
+        int[][] matrizC = {{1, 2}, {7, 7, 8}, {10, 8}};
+        int[][] matrizD = {{5, 1, 4}, {6, 3}, {11}, {1, 2}};
+
+        int[][] z = matrizMayorElemento(matrizC, matrizD);
+
+        mostrarMatriz(z);
+    }
 
     // int[][] matriz = new int[i][j];
     // i = filas
@@ -28,18 +46,20 @@ public class _0302_Class_Arrays_Matrices_Funciones {
     // 10-Calcula la media de una Matriz
     // 11-Generar la Matriz transpuesta
     // 12-Obtener las posiciones adyacentes de una matriz dada una posicion, devuelve una matriz con las posiciones adyacentes a la posición indicada
-    // 
-    // 
+    // 13-Dadas 2 matrices las compara elemento a elemento y devuelva otra matriz con el elemento mas grande
+    // 14-Dadas 2 matrices verifica si tienen las mismas dimensiones
+    // 15-Genera matriz con elementos aleatorios
     // 
     /**
      * 01-Mostrar los valores que contiene una Matriz
      */
     public static void mostrarMatriz(int[][] matriz) {
         for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[0].length; j++) {
-                System.out.print(matriz[i][j] + " ");
+            System.out.print("{");
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j] + ",");
             }
-            System.out.println("");
+            System.out.println("\b}");
         }
     }
 
@@ -224,6 +244,68 @@ public class _0302_Class_Arrays_Matrices_Funciones {
             }
         }
         return posiciones;
+    }
+
+    /**
+     * 13-Dadas 2 matrices las compara elemento a elemento y devuelva otra
+     * matriz con el elemento mas grande
+     */
+    public static int[][] matrizMayorElemento(int[][] a, int[][] b) {
+        int[][] devuelve;
+        if (a.length > b.length) {
+            devuelve = new int[a.length][];
+        } else {
+            devuelve = new int[b.length][];
+        }
+
+        if (a.length == b.length) {
+            for (int i = 0; i < a.length; i++) {
+                devuelve[i] = arrayValoresMax(a[i], b[i]);
+            }
+        }
+        if (a.length > b.length) {
+            for (int i = 0; i < b.length; i++) {
+                devuelve[i] = arrayValoresMax(a[i], b[i]);
+            }
+            for (int i = b.length; i < a.length; i++) {
+                devuelve[i] = Arrays.copyOf(a[i], a[i].length);
+            }
+        }
+        if (b.length > a.length) {
+            for (int i = 0; i < a.length; i++) {
+                devuelve[i] = arrayValoresMax(a[i], b[i]);
+            }
+            for (int i = a.length; i < b.length; i++) {
+                devuelve[i] = Arrays.copyOf(b[i], b[i].length);
+            }
+        }
+        return devuelve;
+    }
+
+    /**
+     * 14-Dadas 2 matrices verifica si tienen las mismas dimensiones
+     */
+    public static boolean esMismoTamañoMatrices(int[][] a, int[][] b) {
+        if (a.length != b.length) {
+            return false;
+        }
+        for (int i = 0; i < a.length; i++) {
+            if (a[i].length != b[i].length) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 15-Genera matriz con elementos aleatorios
+     */
+    public static int[][] generaMatrizNumerosAleatorios(int filas, int col) {
+        int[][] devuelve = new int[filas][col];
+        for (int i = 0; i < devuelve.length; i++) {
+            devuelve[i] = generaArrayNumerosAleatorios(col);
+        }
+        return devuelve;
     }
 
 }
