@@ -1,4 +1,4 @@
-package _10_POO_Ejemplos_de_Clases;
+package _11_POO_Ejemplos_de_Clases;
 
 public class Libro {
 
