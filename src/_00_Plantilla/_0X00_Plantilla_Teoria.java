@@ -13,7 +13,7 @@ public class _0X00_Plantilla_Teoria {
     public static void main(String[] args) {
 
         // METODOS CLASE Character
-        // isAlphabetic(int codePoint)  Determines whether the given character is an alphabet or not.
+        // .isAlphabetic(int codePoint)         Determines whether the given character is an alphabet or not.
     }
 
 }

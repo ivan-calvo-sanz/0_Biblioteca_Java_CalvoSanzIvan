@@ -57,25 +57,25 @@ public class _0300_Class_Arrays_Teoria {
             }
         }
 
-        // METODOS CLASE ARRAY
-        // equals       compara si el contenido de los Arrays son iguales
+        // METODOS CLASE Array
+        // .equals()        compara si el contenido de los Arrays son iguales
         // DIFERENCIAR equals de ==   ,equals compara el contenido, ==  compara la referencia (a donde apunta en la memoria)
         numeros = myNum;    // iguala la referencia
         boolean iguales = Arrays.equals(numeros, myNum);
-        // fill         rellena el array con el valor indicado
+        // .fill()          rellena el array con el valor indicado
         Arrays.fill(numeros, -1);
-        // fill         rellena el array desde una posicion hasta otra con el valor indicado
+        // .fill()         rellena el array desde una posicion hasta otra con el valor indicado
         Arrays.fill(numeros, 3, 5, -1);
-        // copyOf       copia en un array otro array y se indica la longitud del nuevo array generado
+        // .copyOf()       copia en un array otro array y se indica la longitud del nuevo array generado
         int[] num2 = Arrays.copyOf(numeros, 12);
-        // copyOfRange  copia en un array otro array desde una posicion hasta otra indicadas
+        // .copyOfRange()  copia en un array otro array desde una posicion hasta otra indicadas
         int[] num3 = Arrays.copyOfRange(num2, 2, 9);
-        // sort         ordena array (ascendente)
+        // .sort()         ordena array (ascendente)
         Arrays.sort(numeros);
-        // toString         Genera una cadena String para impresión.
+        // .toString()         Genera una cadena String para impresión.
         Arrays.toString(cars_v1);
-        // clone()          Copia en una direccion de memoria diferente el array indicado
-        // arraycopy(array1, iniioOrigen, array2, inicioDestino, elementos)
+        // .clone()          Copia en una direccion de memoria diferente el array indicado
+        // .arraycopy(array1, iniioOrigen, array2, inicioDestino, elementos)
     }
 
 }
