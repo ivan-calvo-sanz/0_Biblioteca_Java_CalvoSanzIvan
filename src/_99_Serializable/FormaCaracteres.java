@@ -1,5 +1,7 @@
 package _99_Serializable;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.Serializable;
 
 public class FormaCaracteres implements Serializable {

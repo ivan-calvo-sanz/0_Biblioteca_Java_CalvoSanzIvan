@@ -1,10 +1,18 @@
 package _99_Serializable;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 public class FormaBinaria_bytes implements Serializable {
 
     public static final long serialVersionUID = 1L;
+    public static File f = new File("documentos/reporte1.txt");
 
     //GUARDAR OBJETO SERIALIZADO    
     //envia un Objeto instancia de la Clase Departamento

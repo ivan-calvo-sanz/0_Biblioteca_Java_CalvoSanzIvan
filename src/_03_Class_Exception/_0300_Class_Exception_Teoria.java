@@ -61,6 +61,19 @@ public class _0300_Class_Exception_Teoria {
             //e.printStackTrace();
         }
 
+        // ***** ArrayIndexOutBoundsException ****
+        // Se lanza cuando intentas aaceder a una posición que no existe de un array .
+        // (Los arrays empiezan en el índice 0 y el último índice es longitud - 1)
+        // Si accedes a un índice negativo o mayor/igual a la longitud, Java lanza esta excepción.
+        int[] numeros = {10, 20, 30};
+        try {
+            System.out.println(numeros[5]); // ❌ Índice fuera de rango
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error ArrayIndexOutBoundsException: posicion NO valida del array");
+            System.out.println(e.getMessage());
+            //e.printStackTrace();
+        }
+
         System.out.println("EL PROGRAMA FINALIZA CORRECTAMENTE CONTROLANDO LAS EXCEPCIONES");
     }
 }

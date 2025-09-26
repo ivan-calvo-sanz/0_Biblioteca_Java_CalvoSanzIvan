@@ -7,7 +7,7 @@ import java.util.InputMismatchException;
  * @author Iván Calvo Sanz
  *
  */
-public class _0300_Class_Exception_Teoria_finally {
+public class _0301_finally {
 
     // el codigo dentro de finally SIEMPRE se ejecuta si el programa ha llegado a entrar dentro del try
     public static void main(String[] args) {
