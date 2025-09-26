@@ -7,9 +7,14 @@ package _00_Plantilla;
  */
 public class _0X00_Plantilla_Teoria {
 
-    // https://www.javatpoint.com/java-tutorial
-    // CONCEPTOS BASICOS ARRAYS
-    // 
+    /**
+     * CONCEPTOS BASICOS EXCEPCIONES
+     */
+
+    /* Hay dos tipos de Excepciones: Verificadas y NO Verificadas
+            - Verificadas (Checked Exceptions): Java obliga a que las manejes (con try-catch o throws), situaciones que se pueden prever. IOException, SQLException, ClassNotFoundException
+            - NO Verificadas (Unchecked Exceptions):  No es obligatorio capturarlas ni declararlas con throws pero son Recomendables capturarlas. ArrayIndexOutOfBoundsException, ArithmeticException
+     */
     public static void main(String[] args) {
 
         // METODOS CLASE Character

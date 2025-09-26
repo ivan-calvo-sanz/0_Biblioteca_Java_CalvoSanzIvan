@@ -10,9 +10,14 @@ import java.util.Scanner;
  */
 public class _0300_Class_Exception_Teoria {
 
-    // 
-    // CONCEPTOS BASICOS
-    // 
+    /**
+     * CONCEPTOS BASICOS EXCEPCIONES
+     */
+
+    /* Hay dos tipos de Excepciones: Verificadas y NO Verificadas
+            - Verificadas (Checked Exceptions): Java obliga a que las manejes (con try-catch o throws), situaciones que se pueden prever. IOException, SQLException, ClassNotFoundException
+            - NO Verificadas (Unchecked Exceptions):  No es obligatorio capturarlas ni declararlas con throws pero son Recomendables capturarlas. ArrayIndexOutOfBoundsException, ArithmeticException
+     */
     public static void main(String[] args) {
 
         // ***** Exception ****
@@ -44,6 +49,7 @@ public class _0300_Class_Exception_Teoria {
             int numero = sc.nextInt(); // espera un int
             System.out.println("Numero ingresado: " + numero);
         } catch (InputMismatchException e) {
+            sc.next();
             System.out.println("Error InputMismatchException: el valor introducido no es un numero entero.");
             System.out.println(e.getMessage());
             //e.printStackTrace();

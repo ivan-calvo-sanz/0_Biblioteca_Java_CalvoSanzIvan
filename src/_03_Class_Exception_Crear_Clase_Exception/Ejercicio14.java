@@ -1,4 +1,4 @@
-package _50_Crear_Clase_Exception;
+package _03_Class_Exception_Crear_Clase_Exception;
 
 /**
  *

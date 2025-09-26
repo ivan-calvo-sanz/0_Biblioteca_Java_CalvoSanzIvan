@@ -8,13 +8,11 @@ package _03_Class_Exception;
 public class _0302_throw_new_Exception {
 
     // ***** throw new Exception ****
-    /**
+    /*
      * throw new Exception lo que hace es crear un Objeto de tipo Exception y lo
-     * lanza donde se ha invocado ese método para que lo capture un catch
-     *
+     lanza donde se ha invocado ese método para que lo capture un catch
      * Se sale inmediatamente del bloque de código actual
-     *
-     * se ejecuta el bloque catch, es necesario tener un catch del tipo de
+     * Se ejecuta el bloque catch, es necesario tener un catch del tipo de
      * Excepcion lanzada sino el programa rompe
      */
     public static void main(String[] args) {
